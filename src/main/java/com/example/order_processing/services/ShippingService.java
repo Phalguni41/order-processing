@@ -13,9 +13,11 @@ public class ShippingService {
 
     @Autowired
     private ShipmentRepository shipmentRepository;
+
     public Shipment shipOrder(Shipment shipment) {
         return shipmentRepository.save(shipment);
     }
+
     public List<Shipment> getAllShipments() {
         return shipmentRepository.findAll();
     }

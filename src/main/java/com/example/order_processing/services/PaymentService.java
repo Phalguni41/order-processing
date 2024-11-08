@@ -13,9 +13,11 @@ public class PaymentService {
 
     @Autowired
     private PaymentRepository paymentRepository;
+
     public Payment processPayment(Payment payment) {
         return paymentRepository.save(payment);
     }
+
     public List<Payment> getAllPayments() {
         return paymentRepository.findAll();
     }
