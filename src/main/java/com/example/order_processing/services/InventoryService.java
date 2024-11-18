@@ -6,6 +6,7 @@ import com.example.order_processing.models.InventoryItem;
 import com.example.order_processing.repos.InventoryRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class InventoryService {
     @Autowired
     private InventoryRepository inventoryRepository;
 
+    @Secured("ROLE_ADMIN")
     public InventoryItem updateInventory(InventoryItem inventoryItem) {
         return inventoryRepository.save(inventoryItem);
     }
